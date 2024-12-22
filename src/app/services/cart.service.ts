@@ -10,6 +10,4 @@ export class CartService {
   addToCart(product: any) {
     this.cart.set([...this.cart(), product]);
   }
-
-  constructor() {}
 }

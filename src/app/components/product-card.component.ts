@@ -12,7 +12,7 @@ import { CartService } from '../services/cart.service';
       <h2>{{ product().name }}</h2>
       <app-primary-button
         label="Add to cart"
-        (btnClciked)="cartService.addToCart(product)"
+        (btnClicked)="cartService.addToCart(product())"
       />
     </div>
   `,
