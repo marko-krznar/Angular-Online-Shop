@@ -10,6 +10,7 @@ import { CartService } from '../services/cart.service';
       <div class="flex justify-between w-full">
         <h1>{{ product.name }}</h1>
         <span>{{ product.price }}</span>
+        <button (click)="cartService.removeFromCart(product.id)">Remove</button>
       </div>
       }
     </div>
