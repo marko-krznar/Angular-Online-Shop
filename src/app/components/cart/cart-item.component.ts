@@ -7,7 +7,7 @@ import { CartService } from '../../services/cart.service';
   template: `
     @for (cartItem of cartService.cart(); track cartItem.id) {
     <div class="flex justify-between w-full">
-      <h2>{{ cartItem.name }}</h2>
+      <h2>{{ cartItem.title }}</h2>
       <span>{{ cartItem.price }}</span>
       <span>{{ cartItem.quantity }}</span>
       <span>{{ cartItem.quantity * cartItem.price }}</span>

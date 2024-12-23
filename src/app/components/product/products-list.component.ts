@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { ProductCardComponent } from './product-card.component';
+import { electronicProducts } from '../../localData/products';
 
 @Component({
   selector: 'app-products-list',
@@ -14,21 +15,5 @@ import { ProductCardComponent } from './product-card.component';
   styles: ``,
 })
 export class ProductsListComponent {
-  products = signal([
-    {
-      id: 'one',
-      name: 'ProductItem 1',
-      price: 100,
-    },
-    {
-      id: 'two',
-      name: 'ProductItem 2',
-      price: 200,
-    },
-    {
-      id: 'three',
-      name: 'ProductItem 3',
-      price: 300,
-    },
-  ]);
+  products = signal(electronicProducts);
 }

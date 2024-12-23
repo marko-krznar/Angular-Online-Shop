@@ -24,9 +24,9 @@ export class CartService {
     }
   }
 
-  removeFromCart(id: string) {
+  removeFromCart(id: number) {
     this.cart.set(
-      this.cart().filter((product: ProductItem) => product.id !== id)
+      this.cart().filter((cartItem: CartItem) => cartItem.id !== id)
     );
   }
 }
