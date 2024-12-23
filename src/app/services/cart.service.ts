@@ -1,18 +1,32 @@
 import { Injectable, signal } from '@angular/core';
-import { Product } from '../models/product.model';
+import { ProductItem } from '../models/product-item.model';
+import { CartItem } from '../models/cart-item.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
-  // TODO add type/interface
-  cart = signal<any>([]);
+  cart = signal<CartItem[]>([]);
 
-  addToCart(product: Product) {
-    this.cart.set([...this.cart(), product]);
+  addToCart(product: ProductItem) {
+    const cartItems = this.cart();
+
+    const cartItem = { ...product, quantity: 1 };
+
+    const existingCartItem = cartItems.findIndex(
+      (cart) => cart.id === cartItem.id
+    );
+
+    if (existingCartItem !== -1) {
+      cartItems[existingCartItem].quantity += cartItem.quantity;
+    } else {
+      cartItems.push(cartItem);
+    }
   }
 
   removeFromCart(id: string) {
-    this.cart.set(this.cart().filter((product: Product) => product.id !== id));
+    this.cart.set(
+      this.cart().filter((product: ProductItem) => product.id !== id)
+    );
   }
 }
