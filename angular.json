@@ -54,9 +54,10 @@
 							}
 						],
 						"styles": [
-							"src/styles.scss",
-							"node_modules/@fortawesome/fontawesome-free/css/all.min.css"
-						],
+              "@angular/material/prebuilt-themes/azure-blue.css",
+              "src/styles.scss",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+            ],
 						"scripts": []
 					},
 					"configurations": {
@@ -111,9 +112,10 @@
 							}
 						],
 						"styles": [
-							"src/styles.scss",
-							"node_modules/@fortawesome/fontawesome-free/css/all.min.css"
-						],
+              "@angular/material/prebuilt-themes/azure-blue.css",
+              "src/styles.scss",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+            ],
 						"scripts": []
 					}
 				}
