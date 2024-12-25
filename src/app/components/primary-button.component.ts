@@ -1,20 +1,17 @@
 import { Component, input, output } from '@angular/core';
 
 @Component({
-  selector: 'app-primary-button',
-  imports: [],
-  template: `
-    <button
-      class="bg-blue-500 text-white border px-5 py-2 rounded-xl shadow-md hover:opacity-90"
-      (click)="btnClicked.emit()"
-    >
-      {{ label() }}
-    </button>
-  `,
-  styles: ``,
+	selector: 'app-primary-button',
+	imports: [],
+	template: `
+		<button class="button primary-button" (click)="btnClicked.emit()">
+			{{ label() }}
+		</button>
+	`,
+	styles: ``,
 })
 export class PrimaryButtonComponent {
-  label = input<string>();
+	label = input<string>();
 
-  btnClicked = output();
+	btnClicked = output();
 }
