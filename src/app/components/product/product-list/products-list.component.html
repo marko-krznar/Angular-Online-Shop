@@ -1,7 +1,5 @@
 <div class="products-wrapper">
 	@for (product of products(); track product.id) {
-		<mat-card class="product-wrapper">
-			<app-product-card [product]="product" />
-		</mat-card>
+		<app-product-card [product]="product" />
 	}
 </div>

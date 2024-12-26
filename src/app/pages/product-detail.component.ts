@@ -4,7 +4,7 @@ import { electronicProducts } from '../localData/products';
 import { ProductItem } from '../models/product-item.model';
 import { PrimaryButtonComponent } from '../components/primary-button.component';
 import { CartService } from '../services/cart.service';
-import { ProductCardComponent } from '../components/product/product-card.component';
+import { ProductCardComponent } from '../components/product/product-card/product-card.component';
 
 @Component({
 	selector: 'app-product-detail',

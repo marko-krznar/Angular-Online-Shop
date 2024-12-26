@@ -1,0 +1,30 @@
+<mat-card class="product-wrapper">
+	<div class="product-image-wrapper">
+		<img
+			mat-card-image
+			[src]="product().image"
+			[alt]="product().title"
+			class="product-image"
+		/>
+	</div>
+	<h2 class="product-title">{{ product().title }}</h2>
+	<span class="product-description">{{ product().description }}</span>
+	<mat-card-footer class="product-card-footer-wrapper">
+		<div class="product-card-footer-inner">
+			<span class="product-price">{{
+				displayPrice(product().price)
+			}}</span>
+			<div class="product-button-group">
+				<button
+					mat-flat-button
+					(click)="cartService.addToCart(product())"
+				>
+					Add to cart
+				</button>
+				<button mat-button [routerLink]="['/product/', product().id]">
+					Details
+				</button>
+			</div>
+		</div>
+	</mat-card-footer>
+</mat-card>

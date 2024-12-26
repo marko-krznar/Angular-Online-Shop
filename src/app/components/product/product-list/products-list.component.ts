@@ -3,7 +3,7 @@ import { Component, signal } from '@angular/core';
 import { MaterialModule } from '../../../material/material.module';
 import { electronicProducts } from '../../../localData/products';
 
-import { ProductCardComponent } from '../product-card.component';
+import { ProductCardComponent } from '../product-card/product-card.component';
 
 @Component({
 	selector: 'app-products-list',
