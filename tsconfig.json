@@ -16,7 +16,12 @@
 		"moduleResolution": "bundler",
 		"importHelpers": true,
 		"target": "ES2022",
-		"module": "ES2022"
+		"module": "ES2022",
+		"baseUrl": "./", // Add this line
+		"paths": {
+			// Add this block
+			"@styles/*": ["src/app/scss/*"]
+		}
 	},
 	"angularCompilerOptions": {
 		"enableI18nLegacyMessageIdFormat": false,

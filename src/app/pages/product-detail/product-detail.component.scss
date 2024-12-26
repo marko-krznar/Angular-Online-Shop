@@ -1,0 +1,13 @@
+@import '../../scss/mixins';
+
+.product-detail-wrapper {
+	padding: 2rem 0;
+
+	.mdc-card {
+		align-items: start;
+	}
+}
+
+.product-detail-inner-wrapper {
+	@include flex-row;
+}

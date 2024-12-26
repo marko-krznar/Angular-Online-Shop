@@ -1,0 +1,11 @@
+.container {
+	max-width: 1440px;
+	padding: 0 2rem;
+	margin: auto;
+}
+
+.products-wrapper {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 2rem;
+}

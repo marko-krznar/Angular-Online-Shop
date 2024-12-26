@@ -8,7 +8,9 @@
 		/>
 	</div>
 	<h2 class="product-title">{{ product().title }}</h2>
-	<span class="product-description">{{ product().description }}</span>
+	<span *ngIf="showDescription" class="product-description">{{
+		product().description
+	}}</span>
 	<mat-card-footer class="product-card-footer-wrapper">
 		<div class="product-card-footer-inner">
 			<span class="product-price">{{
