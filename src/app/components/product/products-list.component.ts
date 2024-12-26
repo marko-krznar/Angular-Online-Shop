@@ -1,14 +1,19 @@
 import { Component, signal } from '@angular/core';
+
+import { MaterialModule } from '../../material/material.module';
+
 import { ProductCardComponent } from './product-card.component';
 import { electronicProducts } from '../../localData/products';
 
 @Component({
 	selector: 'app-products-list',
-	imports: [ProductCardComponent],
+	imports: [ProductCardComponent, MaterialModule],
 	template: `
 		<div class="products-wrapper">
 			@for (product of products(); track product.id) {
-				<app-product-card [product]="product" class="product-wrapper" />
+				<mat-card class="product-wrapper">
+					<app-product-card [product]="product" />
+				</mat-card>
 			}
 		</div>
 	`,

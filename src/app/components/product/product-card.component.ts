@@ -1,10 +1,13 @@
 import { Component, inject, input, OnInit } from '@angular/core';
-import { PrimaryButtonComponent } from '../primary-button.component';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+
 import { CartService } from '../../services/cart.service';
 import { ProductItem } from '../../models/product-item.model';
-import { ActivatedRoute, RouterLink } from '@angular/router';
-import { SecundaryButtonWithIconComponent } from '../secundary-button-with-icon.component';
 import { displayPrice } from '../../utils/helpers';
+
+import { PrimaryButtonComponent } from '../primary-button.component';
+import { SecundaryButtonWithIconComponent } from '../secundary-button-with-icon.component';
+import { MaterialModule } from '../../material/material.module';
 
 @Component({
 	selector: 'app-product-card',
@@ -12,9 +15,11 @@ import { displayPrice } from '../../utils/helpers';
 		PrimaryButtonComponent,
 		RouterLink,
 		SecundaryButtonWithIconComponent,
+		MaterialModule,
 	],
 	template: `
 		<div class="product-image-wrapper">
+			<img mat-card-image />
 			<img
 				[src]="product().image"
 				[alt]="product().title"
@@ -28,16 +33,18 @@ import { displayPrice } from '../../utils/helpers';
 				<span class="product-price">{{
 					displayPrice(product().price)
 				}}</span>
-				<div class="product-button-group">
-					<app-primary-button
-						label="Add to cart"
-						(btnClicked)="cartService.addToCart(product())"
-					/>
-					<app-secundary-button-with-icon
-						label="View Details"
-						[routerLink]="['/product/', product().id]"
-					/>
-				</div>
+				<mat-card-actions>
+					<div class="product-button-group">
+						<app-primary-button
+							label="Add to cart"
+							(btnClicked)="cartService.addToCart(product())"
+						/>
+						<app-secundary-button-with-icon
+							label="View Details"
+							[routerLink]="['/product/', product().id]"
+						/>
+					</div>
+				</mat-card-actions>
 			</div>
 		</div>
 	`,
