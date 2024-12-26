@@ -1,0 +1,18 @@
+@import '../../scss/mixins';
+
+.empty-cart-wrapper {
+	width: fit-content;
+	margin: 2rem auto;
+	padding: 1rem 2rem 2rem;
+
+	@include flex-column;
+
+	.mat-mdc-card-header,
+	.mat-mdc-card-footer {
+		justify-content: center;
+	}
+
+	.mat-mdc-card-footer {
+		display: flex;
+	}
+}
