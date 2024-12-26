@@ -7,7 +7,7 @@ import { HeaderComponent } from './components/header.component';
 	selector: 'app-root',
 	imports: [HeaderComponent, RouterOutlet],
 	template: `
-		<app-header class="header" />
+		<app-header />
 		<router-outlet />
 	`,
 	styles: [],
