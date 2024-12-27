@@ -16,3 +16,25 @@
 		display: flex;
 	}
 }
+
+.cart-wrapper {
+	align-items: flex-start;
+	padding: 2rem 0;
+
+	@include flex-row;
+}
+
+.cart-summary-card {
+	padding: 2rem;
+	gap: 1rem;
+	min-width: 18rem;
+
+	.title-heading {
+		margin: 0;
+	}
+
+	.cart-summary-item {
+		display: flex;
+		justify-content: space-between;
+	}
+}

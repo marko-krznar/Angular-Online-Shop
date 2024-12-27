@@ -1,0 +1,23 @@
+.title-heading {
+	margin-top: 0;
+}
+
+td.mat-column-product {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 0.75rem 1rem;
+}
+
+.img-wrapper {
+	max-width: 4rem;
+	overflow: hidden;
+	aspect-ratio: 1 / 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	img {
+		max-width: 100%;
+	}
+}

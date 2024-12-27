@@ -9,24 +9,26 @@ export class CartService {
 	cart = signal<CartItem[]>([]);
 
 	addToCart(product: ProductItem) {
-		const cartItems = this.cart();
+		this.cart.update((cartItems) => {
+			const existingItemIndex = cartItems.findIndex(
+				(cart) => cart.id === product.id,
+			);
 
-		const cartItem = { ...product, quantity: 1 };
-
-		const existingCartItem = cartItems.findIndex(
-			(cart) => cart.id === cartItem.id,
-		);
-
-		if (existingCartItem !== -1) {
-			cartItems[existingCartItem].quantity += cartItem.quantity;
-		} else {
-			cartItems.push(cartItem);
-		}
+			if (existingItemIndex !== -1) {
+				return cartItems.map((item, index) =>
+					index === existingItemIndex
+						? { ...item, quantity: item.quantity + 1 }
+						: item,
+				);
+			} else {
+				return [...cartItems, { ...product, quantity: 1 }];
+			}
+		});
 	}
 
 	removeFromCart(id: number) {
-		this.cart.set(
-			this.cart().filter((cartItem: CartItem) => cartItem.id !== id),
-		);
+		this.cart.update((cartItems) => {
+			return cartItems.filter((item) => item.id !== id);
+		});
 	}
 }

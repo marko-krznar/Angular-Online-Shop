@@ -25,8 +25,6 @@ export class ProductCardComponent implements OnInit {
 	productLocationId = 0;
 
 	ngOnInit() {
-		console.log(this.showDescription);
-
 		this.route.params.subscribe((params) => {
 			this.productLocationId = Number(params['id']);
 		});

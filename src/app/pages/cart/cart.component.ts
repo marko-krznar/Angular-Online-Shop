@@ -6,8 +6,8 @@ import { CartService } from 'src/app/services/cart.service';
 import { displayPrice } from 'src/app/utils/helpers';
 
 import { PrimaryButtonComponent } from 'src/app/components/primary-button.component';
-import { CartItemComponent } from 'src/app/components/cart/cart-item.component';
 import { MaterialModule } from 'src/app/material/material.module';
+import { CartItemComponent } from 'src/app/components/cart/cart-item/cart-item.component';
 
 @Component({
 	selector: 'app-cart',

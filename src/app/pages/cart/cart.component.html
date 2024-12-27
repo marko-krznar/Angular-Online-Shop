@@ -3,30 +3,28 @@
 	[ngClass]="[cartService.cart().length > 0 ? 'products-cart-wrapper' : '']"
 >
 	@if (cartService.cart().length > 0) {
-		<div class="cart-content-wrapper">
-			<app-cart-item class="cart-items-wrapper" />
-			<div class="cart-summary-wrapper">
-				<span class="title-heading">Your order</span>
-				<div class="cart-summary-items">
-					<div class="cart-summary-item">
-						<span>Subtotal</span
-						><span>{{ displayPrice(cartSubtotal()) }}</span>
-					</div>
-					<div class="cart-summary-item">
-						<span>Discount</span
-						><span>-{{ displayPrice(cartDiscount) }}</span>
-					</div>
-					<div class="cart-summary-item">
-						<span>Delivery</span
-						><span>{{ displayPrice(cartDelivery) }}</span>
-					</div>
+		<app-cart-item class="cart-items-wrapper" />
+		<mat-card class="cart-summary-card">
+			<h3 class="title-heading">Your order</h3>
+			<div class="cart-summary-items">
+				<div class="cart-summary-item">
+					<span>Subtotal</span
+					><span>{{ displayPrice(cartSubtotal()) }}</span>
 				</div>
-				<div class="cart-summary-item cart-summary-grand-total">
-					<span>Grand total</span
-					><span>{{ displayPrice(cartGrandTotal()) }}</span>
+				<div class="cart-summary-item">
+					<span>Discount</span
+					><span>-{{ displayPrice(cartDiscount) }}</span>
+				</div>
+				<div class="cart-summary-item">
+					<span>Delivery</span
+					><span>{{ displayPrice(cartDelivery) }}</span>
 				</div>
 			</div>
-		</div>
+			<div class="cart-summary-item cart-summary-grand-total">
+				<span>Grand total</span
+				><span>{{ displayPrice(cartGrandTotal()) }}</span>
+			</div>
+		</mat-card>
 	} @else {
 		<mat-card class="empty-cart-wrapper">
 			<mat-card-header>
