@@ -4,20 +4,13 @@ import { CommonModule } from '@angular/common';
 
 import { CartService } from 'src/app/services/cart.service';
 import { displayPrice } from 'src/app/utils/helpers';
-
-import { PrimaryButtonComponent } from 'src/app/components/primary-button.component';
 import { MaterialModule } from 'src/app/material/material.module';
+
 import { CartItemComponent } from 'src/app/components/cart/cart-item/cart-item.component';
 
 @Component({
 	selector: 'app-cart',
-	imports: [
-		PrimaryButtonComponent,
-		RouterLink,
-		CartItemComponent,
-		CommonModule,
-		MaterialModule,
-	],
+	imports: [RouterLink, CartItemComponent, CommonModule, MaterialModule],
 	templateUrl: './cart.component.html',
 	styleUrl: './cart.component.scss',
 })

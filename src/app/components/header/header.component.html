@@ -1,14 +1,18 @@
 <mat-toolbar class="header">
-	<button mat-button routerLink="/">Online Shop</button>
-	<button
-		matBadge="{{ cartService.cart().length }}"
-		mat-icon-button
-		routerLink="/cart"
-	>
-		<mat-icon
-			aria-hidden="false"
-			aria-label="shopping-cart-icon"
-			fontIcon="shopping_cart"
-		/>
-	</button>
+	<div class="container">
+		<div class="container-wrapper">
+			<button mat-button routerLink="/">WebStore</button>
+			<button
+				matBadge="{{ cartService.cart().length }}"
+				mat-icon-button
+				routerLink="/cart"
+			>
+				<mat-icon
+					aria-hidden="false"
+					aria-label="shopping-cart-icon"
+					fontIcon="shopping_cart"
+				/>
+			</button>
+		</div>
+	</div>
 </mat-toolbar>

@@ -1,1 +1,14 @@
-<div class="container"><app-header /><router-outlet /></div>
+<div class="content-container">
+	<app-categories [categories]="categories" />
+	<app-products
+		headline="Popular Products"
+		description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea alias beatae aspernatur ex officiis facilis."
+		[products]="products"
+	/>
+	<app-products
+		headline="New Products"
+		description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea alias beatae aspernatur ex officiis facilis."
+		[products]="products"
+		[transparentBcg]="true"
+	/>
+</div>

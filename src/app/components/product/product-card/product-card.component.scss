@@ -9,6 +9,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	max-height: 10rem;
 
 	.product-image {
 		max-width: 100%;
@@ -16,10 +17,25 @@
 	}
 }
 
-.product-description {
-	display: block;
+.product-description-wrapper {
 	flex-grow: 1;
-	padding-bottom: 1rem;
+
+	.product-description {
+		display: inline-block;
+		max-height: 57px;
+		overflow: hidden;
+		color: #767676;
+		margin-bottom: 1rem;
+		position: relative;
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(transparent, #fff);
+		}
+	}
 }
 
 .product-card-footer-inner {

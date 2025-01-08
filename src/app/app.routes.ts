@@ -1,14 +1,15 @@
 import { Routes } from '@angular/router';
 
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
-import { ProductsListComponent } from './components/product/product-list/products-list.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { CategoryComponent } from './pages/category/category.component';
+import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
 	{
 		path: '',
 		pathMatch: 'full',
-		component: ProductsListComponent,
+		component: HomeComponent,
 	},
 	{
 		path: 'cart',
@@ -17,5 +18,9 @@ export const routes: Routes = [
 	{
 		path: 'product/:id',
 		component: ProductDetailComponent,
+	},
+	{
+		path: 'category/:id',
+		component: CategoryComponent,
 	},
 ];

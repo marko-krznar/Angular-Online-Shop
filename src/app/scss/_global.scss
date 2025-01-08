@@ -1,11 +1,46 @@
+.content-container {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+	padding: 4rem 0;
+}
+
 .container {
+	width: 100%;
 	max-width: 1440px;
-	padding: 0 2rem;
 	margin: auto;
 }
 
-.products-wrapper {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 2rem;
+.container-full-width {
+	max-width: 100%;
+
+	.container-wrapper {
+		max-width: calc(1440px - 2rem - 2rem);
+		margin: auto;
+		padding: 0 2rem !important;
+	}
+}
+
+.container-wrapper {
+	padding: 0 2rem;
+}
+
+// Typography
+.title {
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.text {
+	color: #767676;
+	margin: 0;
+}
+
+// Cards
+.products-wrapper .mdc-card {
+	background-color: #fff;
+}
+
+.transparent-container .mdc-card {
+	border: 1px solid #f6f6f8;
 }

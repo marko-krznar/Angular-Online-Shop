@@ -1,0 +1,16 @@
+<div
+	class="container-full-width product-container"
+	[ngClass]="{
+		'transparent-container': transparentBcg,
+	}"
+>
+	<div class="container-wrapper">
+		<span class="title">{{ headline }}</span>
+		<p class="text">{{ description }}</p>
+		<div class="products-wrapper">
+			@for (product of products(); track product.id) {
+				<app-product-card [product]="product" />
+			}
+		</div>
+	</div>
+</div>

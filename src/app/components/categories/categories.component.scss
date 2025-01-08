@@ -1,0 +1,19 @@
+.categories-wrapper {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+	height: 50vh;
+
+	.mdc-card-intro-content {
+		grid-row-start: 1;
+		grid-row-end: 3;
+	}
+
+	.mdc-card:not(.mdc-card-intro-content) {
+		justify-content: flex-end;
+	}
+
+	.mat-mdc-card-title {
+		text-transform: capitalize;
+	}
+}
