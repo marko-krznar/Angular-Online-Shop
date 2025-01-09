@@ -31,8 +31,4 @@ export class CartComponent {
 	cartGrandTotal = computed(
 		() => this.cartSubtotal() - this.cartDiscount + this.cartDelivery,
 	);
-
-	constructor() {
-		console.log(this.cartService.cart());
-	}
 }
