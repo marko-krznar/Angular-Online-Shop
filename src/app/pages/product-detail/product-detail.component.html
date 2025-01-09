@@ -1,52 +1,50 @@
-<div class="component">
-	@if (product !== null) {
-		<div class="container">
-			<div class="container-wrapper product-detail-wrapper">
-				<div class="product-detail-inner-wrapper">
-					<div class="product-detail-image-wrapper">
-						<img [src]="product.image" [alt]="product.title" />
-					</div>
-					<mat-card>
-						<div class="product-detail-content-wrapper">
-							<h2 class="title">{{ product.title }}</h2>
-							<p class="subtitle product-price">
-								{{ displayPrice(product.price) }}
-							</p>
-							<p class="text product-description">
-								{{ product.description }}
-							</p>
-						</div>
-						<button
-							mat-flat-button
-							(click)="cartService.addToCart(product)"
-						>
-							Add to cart
-						</button>
-					</mat-card>
+@if (product !== null) {
+	<div class="container">
+		<div class="container-wrapper product-detail-wrapper">
+			<div class="product-detail-inner-wrapper">
+				<div class="product-detail-image-wrapper">
+					<img [src]="product.image" [alt]="product.title" />
 				</div>
+				<mat-card>
+					<div class="product-detail-content-wrapper">
+						<h2 class="title">{{ product.title }}</h2>
+						<p class="subtitle product-price">
+							{{ displayPrice(product.price) }}
+						</p>
+						<p class="text product-description">
+							{{ product.description }}
+						</p>
+					</div>
+					<button
+						mat-flat-button
+						(click)="cartService.addToCart(product)"
+					>
+						Add to cart
+					</button>
+				</mat-card>
 			</div>
 		</div>
-	} @else {
-		<div class="container">
-			<div class="container-wrapper product-not-found-wrapper">
-				<mat-icon
-					aria-hidden="false"
-					aria-label="gpp-maybe-icon"
-					fontIcon="gpp_maybe"
-				/>
-				<span class="title">Product not found</span>
-				<p class="text">
-					We’re sorry, but the product you’re looking for is currently
-					unavailable or does not exist. It might have been removed,
-					renamed, or is temporarily out of stock.
-				</p>
-				<button mat-flat-button routerLink="/">Go to homepage</button>
-			</div>
+	</div>
+} @else {
+	<div class="container">
+		<div class="container-wrapper product-not-found-wrapper">
+			<mat-icon
+				aria-hidden="false"
+				aria-label="gpp-maybe-icon"
+				fontIcon="gpp_maybe"
+			/>
+			<span class="title">Product not found</span>
+			<p class="text">
+				We’re sorry, but the product you’re looking for is currently
+				unavailable or does not exist. It might have been removed,
+				renamed, or is temporarily out of stock.
+			</p>
+			<button mat-flat-button routerLink="/">Go to homepage</button>
 		</div>
-	}
-	<app-products
-		[products]="products"
-		headline="Similar Products"
-		class="similar-product-container"
-	/>
-</div>
+	</div>
+}
+<app-products
+	[products]="products"
+	headline="Similar Products"
+	class="similar-product-container"
+/>

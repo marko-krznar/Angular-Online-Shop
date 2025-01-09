@@ -41,3 +41,16 @@ mat-card {
 	z-index: 10;
 	bottom: unset;
 }
+
+.mat-mdc-table {
+	background-color: #fff !important;
+
+	tr.mat-mdc-header-row th.mat-mdc-header-cell {
+		font-weight: 700;
+	}
+
+	.mat-mdc-header-cell,
+	.mat-mdc-cell {
+		border-bottom-color: $gray-light-1 !important;
+	}
+}

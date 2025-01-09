@@ -17,7 +17,7 @@ import { CartItemComponent } from 'src/app/components/cart/cart-item/cart-item.c
 export class CartComponent {
 	cartService = inject(CartService);
 	displayPrice = displayPrice;
-	cartDiscount = 10;
+	cartDiscount = 0;
 	cartDelivery = 20;
 
 	cartSubtotal = computed(() =>
@@ -31,4 +31,8 @@ export class CartComponent {
 	cartGrandTotal = computed(
 		() => this.cartSubtotal() - this.cartDiscount + this.cartDelivery,
 	);
+
+	constructor() {
+		console.log(this.cartService.cart());
+	}
 }

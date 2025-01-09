@@ -1,16 +1,14 @@
-// Components
-.component {
-	display: block;
-	padding: 4rem 0;
-	min-height: calc(100vh - 89px - 64px - 4rem);
-}
 // Container
+.app-content-container {
+	min-height: calc(100vh - 64px - 89px);
+	padding-top: 64px;
+}
+
 .content-container {
 	display: flex;
 	flex-direction: column;
 	gap: 4rem;
 	padding: 4rem 0;
-	margin-top: 4rem;
 }
 
 .container {
@@ -60,4 +58,10 @@
 .product-detail-inner-wrapper .mat-mdc-card {
 	width: 70%;
 	background: transparent;
+}
+
+// Buttons
+.button-remove-icon {
+	background-color: transparent !important;
+	box-shadow: unset !important;
 }

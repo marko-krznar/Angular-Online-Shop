@@ -1,8 +1,64 @@
 @import '../../scss/mixins';
 
+.cart-wrapper {
+	align-items: flex-start;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+
+	@include flex-row;
+}
+
+.cart-summary-card {
+	padding: 2rem;
+	gap: 1rem;
+	width: 28rem;
+	background-color: transparent !important;
+	border: 1px solid #f6f6f8;
+	overflow: hidden;
+
+	.title-heading {
+		margin: 0;
+	}
+
+	.cart-summary-item {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.cart-order-summary-items {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding: 1rem 0;
+	border-bottom: 1px solid #f6f6f8;
+
+	.cart-item {
+		display: flex;
+		gap: 1rem;
+
+		.text-name {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+}
+
+.cart-summary-items {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.cart-summary-grand-total {
+	padding-top: 1rem;
+	border-top: 1px solid #f6f6f8;
+}
+
 .empty-cart-wrapper {
 	width: fit-content;
-	margin: 2rem auto;
+	margin: auto;
 	padding: 1rem 2rem 2rem;
 
 	@include flex-column;
@@ -14,27 +70,5 @@
 
 	.mat-mdc-card-footer {
 		display: flex;
-	}
-}
-
-.cart-wrapper {
-	align-items: flex-start;
-	padding: 2rem 0;
-
-	@include flex-row;
-}
-
-.cart-summary-card {
-	padding: 2rem;
-	gap: 1rem;
-	min-width: 18rem;
-
-	.title-heading {
-		margin: 0;
-	}
-
-	.cart-summary-item {
-		display: flex;
-		justify-content: space-between;
 	}
 }
