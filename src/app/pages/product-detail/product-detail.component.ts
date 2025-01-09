@@ -1,5 +1,5 @@
 import { Component, inject, OnDestroy, signal } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 import { electronicProducts } from '../../localData/products';
 import { ProductItem } from '../../models/product-item.model';
@@ -12,7 +12,7 @@ import { ProductsComponent } from '../../components/product/products/products.co
 
 @Component({
 	selector: 'app-product-detail',
-	imports: [MaterialModule, ProductsComponent],
+	imports: [MaterialModule, ProductsComponent, RouterLink],
 	templateUrl: './product-detail.component.html',
 	styleUrls: ['./product-detail.component.scss'],
 })

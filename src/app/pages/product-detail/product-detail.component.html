@@ -27,7 +27,22 @@
 			</div>
 		</div>
 	} @else {
-		<p>Product not found.</p>
+		<div class="container">
+			<div class="container-wrapper product-not-found-wrapper">
+				<mat-icon
+					aria-hidden="false"
+					aria-label="gpp-maybe-icon"
+					fontIcon="gpp_maybe"
+				/>
+				<span class="title">Product not found</span>
+				<p class="text">
+					We’re sorry, but the product you’re looking for is currently
+					unavailable or does not exist. It might have been removed,
+					renamed, or is temporarily out of stock.
+				</p>
+				<button mat-flat-button routerLink="/">Go to homepage</button>
+			</div>
+		</div>
 	}
 	<app-products
 		[products]="products"
