@@ -7,13 +7,12 @@ import { CartService } from '../../services/cart.service';
 import { MaterialModule } from '../../material/material.module';
 import { displayPrice } from 'src/app/utils/helpers';
 
-import { ProductCardComponent } from '../../components/product/product-card/product-card.component';
 import { Subscription } from 'rxjs';
 import { ProductsComponent } from '../../components/product/products/products.component';
 
 @Component({
 	selector: 'app-product-detail',
-	imports: [ProductCardComponent, MaterialModule, ProductsComponent],
+	imports: [MaterialModule, ProductsComponent],
 	templateUrl: './product-detail.component.html',
 	styleUrls: ['./product-detail.component.scss'],
 })
@@ -23,7 +22,7 @@ export class ProductDetailComponent implements OnDestroy {
 	cartService = inject(CartService);
 	displayPrice = displayPrice;
 
-	products: any = signal<any[]>([]);
+	products: any = signal<any[]>(electronicProducts.slice(0, 3));
 	private routeSubscription: Subscription;
 
 	constructor(private route: ActivatedRoute) {
@@ -38,10 +37,6 @@ export class ProductDetailComponent implements OnDestroy {
 			electronicProducts.find(
 				(product) => product.id === this.productId,
 			) || null;
-
-		this.products = electronicProducts
-			.filter((similarProduct) => similarProduct.id !== this.productId)
-			.slice(0, 3);
 	}
 
 	ngOnDestroy(): void {

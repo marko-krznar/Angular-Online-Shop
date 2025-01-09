@@ -1,7 +1,7 @@
 <div class="component">
-	<div class="container">
-		<div class="container-wrapper product-detail-wrapper">
-			@if (product !== null) {
+	@if (product !== null) {
+		<div class="container">
+			<div class="container-wrapper product-detail-wrapper">
 				<div class="product-detail-inner-wrapper">
 					<div class="product-detail-image-wrapper">
 						<img [src]="product.image" [alt]="product.title" />
@@ -24,22 +24,14 @@
 						</button>
 					</mat-card>
 				</div>
-			} @else {
-				<p>Product not found.</p>
-			}
-			<!-- <app-products [products]="products" /> -->
-			<!-- <div class="product-detail-similar-products-wrapper">
-			<h3 class="product-title">Similar Products</h3>
-			<div class="products-wrapper">
-				@for (product of similarProducts; track product.id) {
-					<app-product-card
-						[product]="product"
-						class="product-wrapper"
-						[showDescription]="false"
-					/>
-				}
 			</div>
-		</div> -->
 		</div>
-	</div>
+	} @else {
+		<p>Product not found.</p>
+	}
+	<app-products
+		[products]="products"
+		headline="Similar Products"
+		class="similar-product-container"
+	/>
 </div>
