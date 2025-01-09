@@ -2,11 +2,11 @@ import { Component, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { ProductItem } from 'src/app/models/product-item.model';
-import { ProductCardComponent } from '../../components/product/product-card/product-card.component';
+import { ProductsComponent } from '../../components/product/products/products.component';
 
 @Component({
 	selector: 'app-category',
-	imports: [ProductCardComponent],
+	imports: [ProductsComponent],
 	templateUrl: './category.component.html',
 	styleUrl: './category.component.scss',
 })

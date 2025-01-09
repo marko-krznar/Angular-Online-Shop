@@ -1,5 +1,1 @@
-<div class="products-wrapper">
-	@for (product of products(); track product.id) {
-		<app-product-card [product]="product" />
-	}
-</div>
+<app-products [products]="products" [transparentBcg]="true" class="component" />
