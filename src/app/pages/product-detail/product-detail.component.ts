@@ -1,17 +1,19 @@
-import { Component, inject, OnDestroy } from '@angular/core';
+import { Component, inject, OnDestroy, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { electronicProducts } from '../../localData/products';
 import { ProductItem } from '../../models/product-item.model';
 import { CartService } from '../../services/cart.service';
 import { MaterialModule } from '../../material/material.module';
+import { displayPrice } from 'src/app/utils/helpers';
 
 import { ProductCardComponent } from '../../components/product/product-card/product-card.component';
 import { Subscription } from 'rxjs';
+import { ProductsComponent } from '../../components/product/products/products.component';
 
 @Component({
 	selector: 'app-product-detail',
-	imports: [ProductCardComponent, MaterialModule],
+	imports: [ProductCardComponent, MaterialModule, ProductsComponent],
 	templateUrl: './product-detail.component.html',
 	styleUrls: ['./product-detail.component.scss'],
 })
@@ -19,8 +21,9 @@ export class ProductDetailComponent implements OnDestroy {
 	productId!: number;
 	product: ProductItem | null = null;
 	cartService = inject(CartService);
+	displayPrice = displayPrice;
 
-	similarProducts: ProductItem[] = [];
+	products: any = signal<any[]>([]);
 	private routeSubscription: Subscription;
 
 	constructor(private route: ActivatedRoute) {
@@ -36,7 +39,7 @@ export class ProductDetailComponent implements OnDestroy {
 				(product) => product.id === this.productId,
 			) || null;
 
-		this.similarProducts = electronicProducts
+		this.products = electronicProducts
 			.filter((similarProduct) => similarProduct.id !== this.productId)
 			.slice(0, 3);
 	}

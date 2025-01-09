@@ -1,36 +1,45 @@
-<div class="product-detail-wrapper">
-	@if (product !== null) {
-		<div class="product-detail-inner-wrapper">
-			<div class="product-detail-image-wrapper">
-				<img [src]="product.image" [alt]="product.title" />
-			</div>
-			<mat-card>
-				<div class="product-detail-content-wrapper">
-					<mat-card-title>{{ product.title }}</mat-card-title>
-					<p class="product-price">€{{ product.price }}</p>
-					<p class="product-description">{{ product.description }}</p>
+<div class="component">
+	<div class="container">
+		<div class="container-wrapper product-detail-wrapper">
+			@if (product !== null) {
+				<div class="product-detail-inner-wrapper">
+					<div class="product-detail-image-wrapper">
+						<img [src]="product.image" [alt]="product.title" />
+					</div>
+					<mat-card>
+						<div class="product-detail-content-wrapper">
+							<h2 class="title">{{ product.title }}</h2>
+							<p class="subtitle product-price">
+								{{ displayPrice(product.price) }}
+							</p>
+							<p class="text product-description">
+								{{ product.description }}
+							</p>
+						</div>
+						<button
+							mat-flat-button
+							(click)="cartService.addToCart(product)"
+						>
+							Add to cart
+						</button>
+					</mat-card>
 				</div>
-				<button
-					mat-flat-button
-					(click)="cartService.addToCart(product)"
-				>
-					Add to cart
-				</button>
-			</mat-card>
-		</div>
-	} @else {
-		<p>Product not found.</p>
-	}
-	<div class="product-detail-similar-products-wrapper">
-		<h3 class="product-title">Similar Products</h3>
-		<div class="products-wrapper">
-			@for (product of similarProducts; track product.id) {
-				<app-product-card
-					[product]="product"
-					class="product-wrapper"
-					[showDescription]="false"
-				/>
+			} @else {
+				<p>Product not found.</p>
 			}
+			<!-- <app-products [products]="products" /> -->
+			<!-- <div class="product-detail-similar-products-wrapper">
+			<h3 class="product-title">Similar Products</h3>
+			<div class="products-wrapper">
+				@for (product of similarProducts; track product.id) {
+					<app-product-card
+						[product]="product"
+						class="product-wrapper"
+						[showDescription]="false"
+					/>
+				}
+			</div>
+		</div> -->
 		</div>
 	</div>
 </div>

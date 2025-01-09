@@ -2,6 +2,7 @@
 .component {
 	display: block;
 	padding: 4rem 0;
+	min-height: calc(100vh - 89px - 64px - 4rem);
 }
 // Container
 .content-container {
@@ -38,6 +39,10 @@
 	font-weight: 700;
 }
 
+.subtitle {
+	font-size: 1.5rem;
+}
+
 .text {
 	color: #767676;
 	margin: 0;
@@ -50,4 +55,9 @@
 
 .transparent-container .mdc-card {
 	border: 1px solid #f6f6f8;
+}
+
+.product-detail-inner-wrapper .mat-mdc-card {
+	width: 70%;
+	background: transparent;
 }
