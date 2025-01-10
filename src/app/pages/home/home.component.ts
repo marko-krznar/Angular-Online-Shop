@@ -13,20 +13,34 @@ import { CategoriesComponent } from '../../components/categories/categories.comp
 	styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-	products = signal(electronicProducts);
+	isLoading = signal(true);
 	categories = signal<string[]>([]);
+	popularProducts = signal(electronicProducts);
+	newProducts = signal(electronicProducts);
 
 	async ngOnInit() {
-		const response = await fetch(
-			'https://fakestoreapi.com/products?limit=3',
-		);
-		const data = await response.json();
-		this.products.set(data);
+		const apiBaseUrl = 'https://fakestoreapi.com/products';
 
-		const categoriesResponse = await fetch(
-			'https://fakestoreapi.com/products/categories',
-		);
-		const categoriesData = await categoriesResponse.json();
-		this.categories.set(categoriesData);
+		try {
+			const [productsResponse, categoriesResponse] = await Promise.all([
+				fetch(`${apiBaseUrl}/categories`),
+				fetch(`${apiBaseUrl}?limit=6`),
+			]);
+
+			const [productsData, categoriesData] = await Promise.all([
+				categoriesResponse.json(),
+				productsResponse.json(),
+			]);
+
+			console.log('productsData', productsData);
+			const popularProductsData = productsData.slice(0, 3);
+			const newProductsData = productsData.slice(3, 6);
+
+			this.categories.set(categoriesData);
+			this.popularProducts.set(popularProductsData);
+			this.newProducts.set(newProductsData);
+		} finally {
+			this.isLoading.set(false);
+		}
 	}
 }

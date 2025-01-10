@@ -1,23 +1,23 @@
-@if (product !== null) {
+@if (product() !== null) {
 	<div class="container">
 		<div class="container-wrapper product-detail-wrapper">
 			<div class="product-detail-inner-wrapper">
 				<div class="product-detail-image-wrapper">
-					<img [src]="product.image" [alt]="product.title" />
+					<img [src]="product()!.image" [alt]="product()!.title" />
 				</div>
 				<mat-card>
 					<div class="product-detail-content-wrapper">
-						<h2 class="title">{{ product.title }}</h2>
+						<h2 class="title">{{ product()!.title }}</h2>
 						<p class="subtitle product-price">
-							{{ displayPrice(product.price) }}
+							{{ displayPrice(product()!.price) }}
 						</p>
 						<p class="text product-description">
-							{{ product.description }}
+							{{ product()?.description }}
 						</p>
 					</div>
 					<button
 						mat-flat-button
-						(click)="cartService.addToCart(product)"
+						(click)="cartService.addToCart(product()!)"
 					>
 						Add to cart
 					</button>
@@ -44,7 +44,7 @@
 	</div>
 }
 <app-products
-	[products]="products"
+	[products]="sameCategoryProducts"
 	headline="Similar Products"
 	class="similar-product-container"
 />
