@@ -41,6 +41,12 @@
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
+			flex: 1;
+		}
+
+		.text-price {
+			min-width: 4.5rem;
+			text-align: right;
 		}
 	}
 }
