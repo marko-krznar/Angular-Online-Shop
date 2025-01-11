@@ -1,4 +1,5 @@
 @use '../../scss/mixins' as *;
+@use '../../scss//breakpoints' as *;
 
 .cart-wrapper {
 	align-items: flex-start;
@@ -80,5 +81,14 @@
 
 	.mat-mdc-card-footer {
 		display: flex;
+	}
+}
+
+@media (max-width: $small-laptop) {
+	.cart-wrapper {
+		flex-direction: column;
+	}
+	.cart-summary-card {
+		width: 100%;
 	}
 }

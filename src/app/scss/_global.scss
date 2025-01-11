@@ -1,4 +1,5 @@
 @use './mixins' as *;
+@use './breakpoints' as *;
 
 // Container
 .app-content-container {
@@ -76,4 +77,10 @@
 .button-remove-icon {
 	background-color: transparent !important;
 	box-shadow: unset !important;
+}
+
+@media (max-width: $small-laptop) {
+	.title {
+		font-size: 1.75rem;
+	}
 }

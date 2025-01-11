@@ -1,3 +1,5 @@
+@use '../../scss/breakpoints' as *;
+
 .categories-wrapper {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -31,5 +33,11 @@
 			margin: 0 0 1rem;
 			text-transform: capitalize;
 		}
+	}
+}
+
+@media (max-width: $small-laptop) {
+	.mdc-card-category .mdc-card-category-title {
+		font-size: 1.25rem;
 	}
 }

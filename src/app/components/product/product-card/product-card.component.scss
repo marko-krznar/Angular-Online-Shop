@@ -1,3 +1,5 @@
+@use '../../../scss/breakpoints' as *;
+
 .product-wrapper {
 	height: 100%;
 	padding: 2rem;
@@ -47,5 +49,16 @@
 	.product-price {
 		font-size: 1.5rem;
 		font-weight: bold;
+	}
+}
+
+@media (max-width: $small-laptop) {
+	.product-title,
+	.product-card-footer-inner .product-price {
+		font-size: 1.25rem;
+	}
+
+	.product-card-footer-inner {
+		flex-direction: column;
 	}
 }
