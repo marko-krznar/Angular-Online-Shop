@@ -1,4 +1,4 @@
-@import '../../scss/mixins';
+@use '../../scss/mixins' as *;
 
 .similar-product-container {
 	margin-top: 4rem;
