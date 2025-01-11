@@ -18,6 +18,12 @@
 		padding-top: 2rem;
 	}
 
+	.product-description {
+		max-width: 40rem;
+		text-align: center;
+		text-wrap: balance;
+	}
+
 	&.transparent-container {
 		background-color: transparent;
 		padding: 0;
