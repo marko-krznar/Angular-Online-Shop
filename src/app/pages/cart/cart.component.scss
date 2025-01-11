@@ -6,6 +6,10 @@
 	padding-bottom: 4rem;
 
 	@include flex-row;
+
+	.cart-items-wrapper {
+		flex: 1;
+	}
 }
 
 .cart-summary-card {
