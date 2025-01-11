@@ -1,3 +1,5 @@
+@use './mixins' as *;
+
 // Container
 .app-content-container {
 	min-height: calc(100vh - 64px - 89px);
@@ -29,6 +31,16 @@
 
 .container-wrapper {
 	padding: 0 2rem;
+}
+
+// Header
+.header-component {
+	position: fixed;
+	inset: 0;
+	z-index: 10;
+	bottom: unset;
+
+	@include default-box-shadow;
 }
 
 // Typography

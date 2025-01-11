@@ -1,26 +1,23 @@
 <div class="container">
 	<div class="container-wrapper categories-wrapper">
 		<mat-card class="mdc-card-intro-content">
-			<mat-card-header>
-				<mat-card-title>Welcome</mat-card-title>
-			</mat-card-header>
-			<mat-card-content>
-				<p class="mat-body-1">
-					This project is built to enhance front-end development
-					skills.
-				</p>
-			</mat-card-content>
+			<span class="title">Welcome!</span>
+			<p class="text">
+				This project serves as a learning platform to enhance my
+				front-end development skills, specifically utilizing the Angular
+				framework.
+			</p>
+			<p class="text">
+				This online shop project is solely for educational purposes and
+				is not intended for commercial use.
+			</p>
 		</mat-card>
 		@for (category of categories(); track category) {
-			<mat-card>
-				<mat-card-header>
-					<mat-card-title>{{ category }}</mat-card-title>
-				</mat-card-header>
-				<mat-card-actions>
-					<button mat-button [routerLink]="['/category/', category]">
-						See Products
-					</button>
-				</mat-card-actions>
+			<mat-card class="mdc-card-category">
+				<h2 class="mdc-card-category-title">{{ category }}</h2>
+				<button mat-flat-button [routerLink]="['/category/', category]">
+					See Products
+				</button>
 			</mat-card>
 		}
 	</div>

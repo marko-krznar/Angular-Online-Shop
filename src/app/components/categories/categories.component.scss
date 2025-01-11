@@ -7,13 +7,29 @@
 	.mdc-card-intro-content {
 		grid-row-start: 1;
 		grid-row-end: 3;
-	}
+		gap: 1rem;
+		padding: 2rem;
 
-	.mdc-card:not(.mdc-card-intro-content) {
-		justify-content: flex-end;
+		.mat-mdc-card-content {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
 	}
 
 	.mat-mdc-card-title {
 		text-transform: capitalize;
+	}
+
+	.mdc-card-category {
+		justify-content: flex-end;
+		align-items: flex-start;
+		padding: 2rem;
+		background-color: #f6f6f8;
+
+		.mdc-card-category-title {
+			margin: 0 0 1rem;
+			text-transform: capitalize;
+		}
 	}
 }

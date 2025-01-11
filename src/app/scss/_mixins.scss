@@ -8,3 +8,7 @@
 	display: flex;
 	gap: 2rem;
 }
+
+@mixin default-box-shadow {
+	box-shadow: 0 0 1rem 0.25rem #e6e6e6;
+}
