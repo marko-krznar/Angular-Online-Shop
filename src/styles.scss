@@ -13,6 +13,7 @@ body {
 
 $gray-light-1: #f6f6f8;
 $gray-medium-1: #767676;
+$gray-dark-1: #44474e;
 $blue-medium-1: #1767ce;
 
 html {
@@ -47,4 +48,12 @@ mat-card {
 	.mat-mdc-cell {
 		border-bottom-color: $gray-light-1 !important;
 	}
+}
+
+:root {
+	@include mat.badge-overrides(
+		(
+			background-color: var(--mat-sys-primary),
+		)
+	);
 }
