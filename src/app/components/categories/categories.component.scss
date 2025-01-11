@@ -41,3 +41,25 @@
 		font-size: 1.25rem;
 	}
 }
+
+@media (max-width: $tablet) {
+	.categories-wrapper {
+		height: auto;
+		grid-template-rows: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr);
+
+		.mdc-card-intro-content {
+			grid-row-start: 1;
+			grid-row-end: 1;
+			grid-column-start: 1;
+			grid-column-end: 3;
+		}
+	}
+}
+
+@media (max-width: $large-mobile) {
+	.categories-wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+}

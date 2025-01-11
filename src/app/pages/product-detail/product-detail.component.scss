@@ -1,4 +1,5 @@
 @use '../../scss/mixins' as *;
+@use '../../scss/breakpoints' as *;
 
 .similar-product-container {
 	margin-top: 4rem;
@@ -44,5 +45,26 @@
 		font-size: 4rem;
 		width: 4rem;
 		height: 4rem;
+	}
+}
+
+@media (max-width: $tablet) {
+	.product-detail-inner-wrapper {
+		flex-direction: column;
+		align-items: center;
+
+		.mdc-card {
+			padding-left: 0;
+			width: 100%;
+		}
+	}
+}
+@media (max-width: $large-mobile) {
+	.product-detail-wrapper {
+		padding-top: 2rem;
+	}
+
+	.similar-product-container {
+		margin-top: 2rem;
 	}
 }

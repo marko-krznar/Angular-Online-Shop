@@ -1,3 +1,5 @@
+@use '../../scss/breakpoints' as *;
+
 .footer-container {
 	padding: 2rem 0;
 	border-top: 1px solid #f6f6f8;
@@ -24,5 +26,31 @@
 
 	.footer-column-icons .mat-icon {
 		color: #767676;
+	}
+}
+
+@media (max-width: $tablet) {
+	.footer-container {
+		.container-wrapper {
+			gap: 1rem;
+			grid-template-columns: 1fr;
+		}
+
+		.footer-column {
+			justify-content: center;
+		}
+
+		.footer-column-company {
+			order: 1;
+		}
+
+		.footer-column-icons {
+			order: 2;
+		}
+
+		.footer-column-info {
+			order: 3;
+			justify-self: center;
+		}
 	}
 }

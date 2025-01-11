@@ -1,3 +1,5 @@
+@use '../../../scss/breakpoints' as *;
+
 .title-heading {
 	margin-top: 0;
 }
@@ -20,5 +22,11 @@ td.mat-column-product {
 	img {
 		max-width: 100%;
 		max-height: 100%;
+	}
+}
+
+@media (max-width: $large-mobile) {
+	td.mat-column-product .img-wrapper {
+		display: none;
 	}
 }
