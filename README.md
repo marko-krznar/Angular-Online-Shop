@@ -12,6 +12,9 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
+:point_right: [Check out the app](https://marko-krznar.github.io/Angular-Online-Shop/)
+
+<!--
 ## Code scaffolding
 
 Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
@@ -53,6 +56,7 @@ ng e2e
 ```
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+-->
 
 ## Additional Resources
 
