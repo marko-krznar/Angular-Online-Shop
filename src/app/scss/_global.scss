@@ -1,0 +1,112 @@
+@use './mixins' as *;
+@use './breakpoints' as *;
+
+// Container
+.app-content-container {
+	min-height: calc(100vh - 64px - 89px);
+	padding-top: 64px;
+}
+
+.content-container {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+	padding: 4rem 0;
+}
+
+.container {
+	width: 100%;
+	max-width: 1440px;
+	margin: auto;
+}
+
+.container-full-width {
+	max-width: 100%;
+
+	.container-wrapper {
+		max-width: calc(1440px - 2rem - 2rem);
+		margin: auto;
+		padding: 0 2rem !important;
+	}
+}
+
+.container-wrapper {
+	padding: 0 2rem;
+}
+
+// Header
+.header-component {
+	position: fixed;
+	inset: 0;
+	z-index: 10;
+	bottom: unset;
+
+	@include default-box-shadow;
+}
+
+// Typography
+.title {
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.subtitle {
+	font-size: 1.5rem;
+}
+
+.text {
+	color: #767676;
+	margin: 0;
+}
+
+// Cards
+.products-wrapper .mdc-card {
+	background-color: #fff;
+}
+
+.transparent-container .mdc-card {
+	border: 1px solid #f6f6f8;
+}
+
+.product-detail-inner-wrapper .mat-mdc-card {
+	width: 70%;
+	background: transparent;
+}
+
+// Buttons
+.button-remove-icon {
+	background-color: transparent !important;
+	box-shadow: unset !important;
+}
+
+@media (max-width: $small-laptop) {
+	.title {
+		font-size: 1.75rem;
+	}
+}
+
+@media (max-width: $tablet) {
+	.app-content-container {
+		min-height: calc(100vh - 64px - 165px);
+	}
+}
+
+@media (max-width: $large-mobile) {
+	.app-content-container {
+		padding-top: 56px;
+		min-height: calc(100vh - 56px - 165px);
+	}
+
+	.content-container {
+		padding: 2rem 0;
+		gap: 2rem;
+	}
+
+	.container-wrapper {
+		padding: 0 1rem;
+	}
+
+	.container-full-width .container-wrapper {
+		padding: 0 1rem !important;
+	}
+}

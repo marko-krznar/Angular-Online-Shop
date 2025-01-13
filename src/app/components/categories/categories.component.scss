@@ -1,0 +1,65 @@
+@use '../../scss/breakpoints' as *;
+
+.categories-wrapper {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+	height: 50vh;
+
+	.mdc-card-intro-content {
+		grid-row-start: 1;
+		grid-row-end: 3;
+		gap: 1rem;
+		padding: 2rem;
+
+		.mat-mdc-card-content {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
+	}
+
+	.mat-mdc-card-title {
+		text-transform: capitalize;
+	}
+
+	.mdc-card-category {
+		justify-content: flex-end;
+		align-items: flex-start;
+		padding: 2rem;
+		background-color: #f6f6f8;
+
+		.mdc-card-category-title {
+			margin: 0 0 1rem;
+			text-transform: capitalize;
+		}
+	}
+}
+
+@media (max-width: $small-laptop) {
+	.mdc-card-category .mdc-card-category-title {
+		font-size: 1.25rem;
+	}
+}
+
+@media (max-width: $tablet) {
+	.categories-wrapper {
+		height: auto;
+		grid-template-rows: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr);
+
+		.mdc-card-intro-content {
+			grid-row-start: 1;
+			grid-row-end: 1;
+			grid-column-start: 1;
+			grid-column-end: 3;
+		}
+	}
+}
+
+@media (max-width: $large-mobile) {
+	.categories-wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+}

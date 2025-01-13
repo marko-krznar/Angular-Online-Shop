@@ -1,0 +1,67 @@
+<div class="container cart-container">
+	<div
+		class="container-wrapper cart-wrapper"
+		[ngClass]="[
+			cartService.cart().length > 0 ? 'products-cart-wrapper' : '',
+		]"
+	>
+		@if (cartService.cart().length > 0) {
+			<app-cart-item class="cart-items-wrapper" />
+			<mat-card class="cart-summary-card">
+				<div class="cart-order-summary">
+					<span class="title-heading">Order summary</span>
+					<div class="cart-order-summary-items">
+						@for (cartItem of cartService.cart(); track cartItem) {
+							<div class="cart-item">
+								<span class="text">
+									x{{ cartItem.quantity }}
+								</span>
+								<span
+									class="text text-name"
+									title="{{ cartItem.title }}"
+								>
+									{{ cartItem.title }}
+								</span>
+								<span class="text text-price">
+									{{ displayPrice(cartItem.price) }}
+								</span>
+							</div>
+						}
+					</div>
+				</div>
+				<div class="cart-summary-items">
+					<div class="cart-summary-item">
+						<span class="text">Amount</span>
+						<span class="text">{{
+							displayPrice(cartSubtotal())
+						}}</span>
+					</div>
+					<div class="cart-summary-item">
+						<span class="text">Tax</span>
+						<span class="text">{{
+							displayPrice(cartDelivery)
+						}}</span>
+					</div>
+				</div>
+				<div class="cart-summary-item cart-summary-grand-total">
+					<span>Order total</span
+					><span>{{ displayPrice(cartGrandTotal()) }}</span>
+				</div>
+			</mat-card>
+		} @else {
+			<mat-card class="empty-cart-wrapper">
+				<mat-card-header>
+					<mat-card-title>Empty Cart</mat-card-title>
+				</mat-card-header>
+				<mat-card-content class="empty-cart-content">
+					There are no products added in the cart.
+				</mat-card-content>
+				<mat-card-footer>
+					<button mat-flat-button routerLink="/">
+						Add Products to the Cart
+					</button>
+				</mat-card-footer>
+			</mat-card>
+		}
+	</div>
+</div>

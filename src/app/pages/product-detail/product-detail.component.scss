@@ -1,0 +1,70 @@
+@use '../../scss/mixins' as *;
+@use '../../scss/breakpoints' as *;
+
+.similar-product-container {
+	margin-top: 4rem;
+	display: block;
+}
+
+.product-detail-wrapper {
+	padding-top: 4rem;
+
+	.mdc-card {
+		align-items: start;
+		padding-left: 4rem;
+	}
+}
+
+.product-detail-inner-wrapper {
+	@include flex-row;
+
+	.product-detail-image-wrapper {
+		width: 30%;
+
+		img {
+			display: block;
+			max-width: 100%;
+		}
+	}
+
+	.product-description {
+		margin-bottom: 1.5rem;
+	}
+}
+
+.product-not-found-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	align-items: center;
+	max-width: 40rem;
+	margin: auto;
+	padding-top: 4rem;
+
+	.mat-icon {
+		font-size: 4rem;
+		width: 4rem;
+		height: 4rem;
+	}
+}
+
+@media (max-width: $tablet) {
+	.product-detail-inner-wrapper {
+		flex-direction: column;
+		align-items: center;
+
+		.mdc-card {
+			padding-left: 0;
+			width: 100%;
+		}
+	}
+}
+@media (max-width: $large-mobile) {
+	.product-detail-wrapper {
+		padding-top: 2rem;
+	}
+
+	.similar-product-container {
+		margin-top: 2rem;
+	}
+}

@@ -1,0 +1,108 @@
+@use '../../scss/mixins' as *;
+@use '../../scss//breakpoints' as *;
+
+.cart-wrapper {
+	align-items: flex-start;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+
+	@include flex-row;
+
+	.cart-items-wrapper {
+		flex: 1;
+	}
+}
+
+.cart-summary-card {
+	padding: 2rem;
+	gap: 1rem;
+	width: 28rem;
+	background-color: transparent !important;
+	border: 1px solid #f6f6f8;
+	overflow: hidden;
+
+	.title-heading {
+		margin: 0;
+	}
+
+	.cart-summary-item {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.cart-order-summary-items {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding: 1rem 0;
+	border-bottom: 1px solid #f6f6f8;
+
+	.cart-item {
+		display: flex;
+		gap: 1rem;
+
+		.text-name {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			flex: 1;
+		}
+
+		.text-price {
+			min-width: 4.5rem;
+			text-align: right;
+		}
+	}
+}
+
+.cart-summary-items {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.cart-summary-grand-total {
+	padding-top: 1rem;
+	border-top: 1px solid #f6f6f8;
+}
+
+.empty-cart-wrapper {
+	width: fit-content;
+	margin: auto;
+	padding: 1rem 2rem 2rem;
+
+	@include flex-column;
+
+	.mat-mdc-card-header,
+	.mat-mdc-card-footer {
+		justify-content: center;
+	}
+
+	.mat-mdc-card-footer {
+		display: flex;
+	}
+}
+
+@media (max-width: $small-laptop) {
+	.cart-wrapper {
+		flex-direction: column;
+	}
+
+	.cart-summary-card {
+		width: 100%;
+	}
+}
+
+// TODO fix table for mobiles, it has overflow
+@media (max-width: $large-mobile) {
+	.cart-wrapper {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+
+		.cart-items-wrapper {
+			max-width: 100%;
+			overflow: hidden;
+		}
+	}
+}
