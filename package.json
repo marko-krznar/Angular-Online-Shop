@@ -1,14 +1,13 @@
 {
 	"name": "angular-ecomm",
 	"version": "0.0.0",
-	"homepage”": "https://marko-krznar.github.io/Angular-Online-Shop/",
+	"homepage": "https://marko-krznar.github.io/Angular-Online-Shop/",
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
-		"build": "ng build",
-		"watch": "ng build --watch --configuration development",
-		"test": "ng test",
-		"deploy": "ng deploy --base-href=/Angular-Online-Shop/"
+		"build": "ng build --configuration production --base-href /Angular-Online-Shop/",
+		"predeploy": "npm run build && cp dist/angular-ecomm/browser/index.html dist/angular-ecomm/browser/404.html && touch dist/angular-ecomm/browser/.nojekyll",
+		"deploy": "gh-pages -d dist/angular-ecomm/browser"
 	},
 	"private": true,
 	"dependencies": {
@@ -32,7 +31,6 @@
 		"@angular/cli": "^19.0.6",
 		"@angular/compiler-cli": "^19.0.0",
 		"@types/jasmine": "~5.1.0",
-		"angular-cli-ghpages": "^2.0.3",
 		"gh-pages": "^6.3.0",
 		"jasmine-core": "~5.4.0",
 		"karma": "~6.4.0",
