@@ -87,6 +87,10 @@
 @media (max-width: $small-laptop) {
 	.cart-wrapper {
 		flex-direction: column;
+
+		.cart-items-wrapper {
+			width: 100%;
+		}
 	}
 
 	.cart-summary-card {
@@ -94,7 +98,6 @@
 	}
 }
 
-// TODO fix table for mobiles, it has overflow
 @media (max-width: $large-mobile) {
 	.cart-wrapper {
 		padding-top: 2rem;
@@ -103,6 +106,7 @@
 		.cart-items-wrapper {
 			max-width: 100%;
 			overflow: hidden;
+			width: 100%;
 		}
 	}
 }
