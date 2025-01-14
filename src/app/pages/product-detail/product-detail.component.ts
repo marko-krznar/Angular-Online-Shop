@@ -6,7 +6,6 @@ import { MaterialModule } from '../../material/material.module';
 import { ProductItem } from '../../models/product-item.model';
 import { CartService } from '../../services/cart.service';
 import { displayPrice } from 'src/app/utils/helpers';
-import { electronicProducts } from 'src/app/localData/products';
 
 import { ProductsComponent } from '../../components/product/products/products.component';
 
@@ -25,9 +24,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 	product = signal<ProductItem | null>(null);
 
 	isLoadingProductsInSameCategory = signal(true);
-	sameCategoryProducts = signal<ProductItem[]>(
-		electronicProducts.slice(0, 3),
-	);
+	sameCategoryProducts = signal<ProductItem[]>([]);
 
 	displayPrice = displayPrice;
 

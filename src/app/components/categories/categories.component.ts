@@ -10,4 +10,5 @@ import { MaterialModule } from 'src/app/material/material.module';
 })
 export class CategoriesComponent {
 	@Input() categories!: Signal<any>;
+	@Input() isLoading!: Signal<boolean>;
 }

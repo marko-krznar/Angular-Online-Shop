@@ -1,10 +1,10 @@
-import { Component, effect, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { MaterialModule } from '../../../material/material.module';
-import { electronicProducts } from '../../../localData/products';
 
 import { ProductsComponent } from '../products/products.component';
+import { ProductItem } from 'src/app/models/product-item.model';
 
 @Component({
 	selector: 'app-products-list',
@@ -13,7 +13,7 @@ import { ProductsComponent } from '../products/products.component';
 	styleUrls: ['./products-list.component.scss'],
 })
 export class ProductsListComponent {
-	products = signal(electronicProducts);
+	products = signal<ProductItem[]>([]);
 	categories = signal<string[]>([]);
 
 	async ngOnInit() {

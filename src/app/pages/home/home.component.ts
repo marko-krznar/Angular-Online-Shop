@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 
 import { MaterialModule } from 'src/app/material/material.module';
-import { electronicProducts } from 'src/app/localData/products';
+import { ProductItem } from 'src/app/models/product-item.model';
 
 import { ProductsComponent } from 'src/app/components/product/products/products.component';
 import { CategoriesComponent } from '../../components/categories/categories.component';
@@ -15,8 +15,8 @@ import { CategoriesComponent } from '../../components/categories/categories.comp
 export class HomeComponent {
 	isLoading = signal(true);
 	categories = signal<string[]>([]);
-	popularProducts = signal(electronicProducts);
-	newProducts = signal(electronicProducts);
+	popularProducts = signal<ProductItem[]>([]);
+	newProducts = signal<ProductItem[]>([]);
 
 	async ngOnInit() {
 		const apiBaseUrl = 'https://fakestoreapi.com/products';
@@ -32,7 +32,6 @@ export class HomeComponent {
 				productsResponse.json(),
 			]);
 
-			console.log('productsData', productsData);
 			const popularProductsData = productsData.slice(0, 3);
 			const newProductsData = productsData.slice(3, 6);
 

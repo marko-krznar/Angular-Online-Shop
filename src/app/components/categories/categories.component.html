@@ -12,13 +12,20 @@
 				is not intended for commercial use.
 			</p>
 		</mat-card>
-		@for (category of categories(); track category) {
-			<mat-card class="mdc-card-category">
-				<h2 class="mdc-card-category-title">{{ category }}</h2>
-				<button mat-flat-button [routerLink]="['/category/', category]">
-					See Products
-				</button>
-			</mat-card>
+		@if (isLoading()) {
+			<mat-spinner />
+		} @else {
+			@for (category of categories(); track category) {
+				<mat-card class="mdc-card-category">
+					<h2 class="mdc-card-category-title">{{ category }}</h2>
+					<button
+						mat-flat-button
+						[routerLink]="['/category/', category]"
+					>
+						See Products
+					</button>
+				</mat-card>
+			}
 		}
 	</div>
 </div>

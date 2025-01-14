@@ -48,6 +48,13 @@
 	}
 }
 
+.product-detail-load-wrapper {
+	min-height: 80vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 @media (max-width: $tablet) {
 	.product-detail-inner-wrapper {
 		flex-direction: column;
