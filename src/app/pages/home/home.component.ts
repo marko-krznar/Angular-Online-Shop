@@ -5,6 +5,7 @@ import { ProductItem } from 'src/app/models/product-item.model';
 
 import { ProductsComponent } from 'src/app/components/product/products/products.component';
 import { CategoriesComponent } from '../../components/categories/categories.component';
+import { CategoriesService } from 'src/app/services/categories.service';
 
 @Component({
 	selector: 'app-home',
@@ -18,24 +19,26 @@ export class HomeComponent {
 	popularProducts = signal<ProductItem[]>([]);
 	newProducts = signal<ProductItem[]>([]);
 
+	constructor(private categoriesService: CategoriesService) {}
+
 	async ngOnInit() {
 		const apiBaseUrl = 'https://fakestoreapi.com/products';
 
+		this.categoriesService.getCategories().subscribe({
+			next: (categories) => this.categories.set(categories),
+			error: (err) => console.error(err),
+		});
+
 		try {
-			const [productsResponse, categoriesResponse] = await Promise.all([
-				fetch(`${apiBaseUrl}/categories`),
+			const [productsResponse] = await Promise.all([
 				fetch(`${apiBaseUrl}?limit=6`),
 			]);
 
-			const [productsData, categoriesData] = await Promise.all([
-				categoriesResponse.json(),
-				productsResponse.json(),
-			]);
+			const [productsData] = await Promise.all([productsResponse.json()]);
 
 			const popularProductsData = productsData.slice(0, 3);
 			const newProductsData = productsData.slice(3, 6);
 
-			this.categories.set(categoriesData);
 			this.popularProducts.set(popularProductsData);
 			this.newProducts.set(newProductsData);
 		} finally {

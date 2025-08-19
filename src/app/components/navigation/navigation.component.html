@@ -1,0 +1,12 @@
+<button mat-button [matMenuTriggerFor]="menu">
+	{{ 'Categories' | uppercase }}
+	<mat-icon>keyboard_arrow_down</mat-icon>
+</button>
+
+<mat-menu #menu="matMenu">
+	@for (category of categories; track $index) {
+		<button mat-menu-item [routerLink]="['/category/', category]">
+			{{ category | titlecase }}
+		</button>
+	}
+</mat-menu>
