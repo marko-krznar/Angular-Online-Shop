@@ -9,7 +9,10 @@
 		<p class="text product-description">{{ description }}</p>
 		<div class="products-wrapper">
 			@for (product of products(); track product.id) {
-				<app-product-card [product]="product" />
+				<app-product-card
+					[product]="product"
+					[transferOriginalImage]="transferOriginalImage"
+				/>
 			}
 		</div>
 	</div>

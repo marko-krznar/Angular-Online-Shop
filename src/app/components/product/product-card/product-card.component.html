@@ -2,7 +2,11 @@
 	<div class="product-image-wrapper">
 		<img
 			mat-card-image
-			[src]="product().image"
+			[src]="
+				transferOriginalImage
+					? (product().image | productImage)
+					: product().image
+			"
 			[alt]="product().title"
 			class="product-image"
 		/>

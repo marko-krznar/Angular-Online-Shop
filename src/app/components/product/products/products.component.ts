@@ -17,4 +17,6 @@ export class ProductsComponent {
 	@Input() products!: Signal<any>;
 
 	@Input() transparentBcg: boolean = false;
+
+	@Input() transferOriginalImage: boolean = false;
 }
