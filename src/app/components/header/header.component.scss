@@ -1,5 +1,10 @@
-.header .container-wrapper {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+.header {
+	.container-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.nav-right-wrapper {
+		display: flex;
+	}
 }
