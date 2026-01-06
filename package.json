@@ -5,7 +5,7 @@
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
-		"build": "ng build --configuration production --base-href /Angular-Online-Shop/",
+		"build": "ng build --configuration production",
 		"predeploy": "npm run build && cp dist/angular-ecomm/browser/index.html dist/angular-ecomm/browser/404.html && touch dist/angular-ecomm/browser/.nojekyll",
 		"deploy": "gh-pages -d dist/angular-ecomm/browser"
 	},
